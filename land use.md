@@ -11,9 +11,11 @@ leverage, pervasive, elaborate, judicious,
 ---
 
 #### 概述
+城市中可获得的数据中，没有土地使用分类的真实数据，会导致大量工作在标注上，为省去这部分巨大开销，提出了TransLand模型，
 
-部分城市（记为城市B）的已标注的数据难以获得，而有些城市(记为城市A)数据有统计和公开，该文章提出了新方法，通过城市A的数据训练模型，用该模型，对非监督学习转化的B城市图像进行分类，对比不转换直接用常规模型训练，直接对另一个城市遥感图像进行分类的结果有显著提升，城市、森林部分分类结果还行（0.7-0.8），绿地，交通不行。
+模型：城市B的已标注的数据难以获得，城市A已标注数据有统计和公开，通过城市A的数据训练模型，用该模型，对非监督学习转化的B城市图像进行分类，城市、森林部分分类结果还行（0.7-0.8），耕地，交通不行。核心主要为将B城市遥感影像转换为A城市的风格，以让在A城市的训练模型用在转换后的影像上有较好的分类结果。
 
+该方法，对比不转换直接对另一个城市遥感图像进行分类的效果有显著提升，
 #### 模型和算法
 
 模型分了三个部分，
@@ -26,9 +28,9 @@ leverage, pervasive, elaborate, judicious,
 
 - 第三部分为图片分类，land Usage Classification Module (LUCM)
 
-  ![image-20220728195220856](land%20use.assets/image-20220728195220856.png)
+![image](https://user-images.githubusercontent.com/66621797/181716435-4d0cc5c9-c68c-4597-a8cd-aae86aa6362d.png)
 
-  ![image-20220728195244000](land%20use.assets/image-20220728195244000.png)
+![image](https://user-images.githubusercontent.com/66621797/181716481-6611161a-79fa-47c1-aa7e-a5434c2160a9.png)
 
 算法
 
@@ -78,7 +80,7 @@ TransLand
 
  The results  how that TransLand significantly outperforms the state-of-the-art land usage classification baselines in classifying the land usage of locations in a city.
 
-##### 引入
+##### induction
 
 - land usage classification is important.
 - a rich set of ground-truth data on land usage is needed as training data to extract the features and build model.
@@ -91,13 +93,13 @@ TransLand
 
 下图为一种转换方式。
 
-![image-20220727194350717](land%20use.assets/image-20220727194350717.png)
+![image-20220727194350717](https://user-images.githubusercontent.com/66621797/181716663-4df34d2d-c4b6-451c-99ac-7c79edcc06c0.png)
 
 ##### 模型
 
 
+![image-20220728195214103](https://user-images.githubusercontent.com/66621797/181716727-19ddcc9c-cc64-4b20-bc2a-2d066ecf1c7f.png)
 
-![](land%20use.assets/image-20220728195214103.png)
 
 module
 
@@ -115,11 +117,9 @@ module
 
 
 
+![image](https://user-images.githubusercontent.com/66621797/181716435-4d0cc5c9-c68c-4597-a8cd-aae86aa6362d.png)
 
-
-![image-20220728195220856](land%20use.assets/image-20220728195220856.png)
-
-![image-20220728195244000](land%20use.assets/image-20220728195244000.png)
+![image](https://user-images.githubusercontent.com/66621797/181716481-6611161a-79fa-47c1-aa7e-a5434c2160a9.png)
 
 ##### 结果
 
@@ -127,13 +127,10 @@ module
 - 城市森林分类可以。
 
 
-
-![image-20220729150348364](land%20use.assets/image-20220729150348364.png)
-
-
+![image-20220728203054302](https://user-images.githubusercontent.com/66621797/181717027-a09ab086-a8c1-4314-9be7-85ad2217bd54.png)
+![image-20220729150348364](https://user-images.githubusercontent.com/66621797/181716881-0a449edd-f73f-4478-9147-1e47a9cdfbf0.png)
 
 
 
-![image-20220728203109005](land%20use.assets/image-20220728203109005.png)
 
 ### 
