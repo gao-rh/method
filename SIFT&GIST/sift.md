@@ -1,6 +1,4 @@
-## Classifying urban land use by integrating remote sensing and social media data
 
----
 
 **new word**: 
 
