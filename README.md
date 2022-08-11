@@ -1,1 +1,1 @@
-anything learned from 2022/11
+learned from 2022/11
