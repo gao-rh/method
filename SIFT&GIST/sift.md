@@ -31,11 +31,9 @@ spatial envelope characters?, delineate, allocation, evenly, cascade
    \frac{D(x, y, \sigma)}{I(x,y)}=G(x, y, k\sigma)-G(x,y,\sigma)\approx(k-1)\sigma^2∇^2G
    $$
 
-   
+   ![image-20220806141926607](https://user-images.githubusercontent.com/66621797/184053339-7c5087df-b8ee-48fc-b54d-b2e3bca3a054.png)
 
-   ![image-20220806141926607](C:/Users/17892/AppData/Roaming/Typora/typora-user-images/image-20220806141926607.png)
-
-   ![image-20220806142159862](C:/Users/17892/AppData/Roaming/Typora/typora-user-images/image-20220806142159862.png)
+   ![image-20220806142159862](https://user-images.githubusercontent.com/66621797/184053378-3ca2a3e9-0cea-4b38-aac8-87ca8c9afea3.png)
 
    > In order to detect the local maxima and minima of D(x, y, ), each sample point is compared to its eight neighbors in the current image and nine neighbors in the scale above and below (see Figure 2). It is selected only if it is larger than all of these neighbors or smaller than all of them. The cost of this check is reasonably low due to the fact that most sample points will be eliminated following the first few checks.
 
@@ -56,17 +54,19 @@ spatial envelope characters?, delineate, allocation, evenly, cascade
    $$
 
    
+   ![image-20220806184624515](https://user-images.githubusercontent.com/66621797/184053408-2236e25f-8491-4867-ad55-d268a46daf16.png)
 
-   ![image-20220806184624515](C:/Users/17892/AppData/Roaming/Typora/typora-user-images/image-20220806184624515.png)
+
 
    > - **reject keypoints with low contrast**: all extrema with a value of $|D(\hat x)|$ less than 0.03 were discarded (as before, we assume image pixel values in the range [0,1])
    > - **Eliminating edge responses**:
 
-![image-20220806185006406](C:/Users/17892/AppData/Roaming/Typora/typora-user-images/image-20220806185006406.png)
+   ![image-20220806185006406](https://user-images.githubusercontent.com/66621797/184053440-19a277a3-03ce-4599-adb7-353a3d102047.png)
 
 3. **Orientation assignment**: One or more orientations are assigned to each keypoint location based on local image gradient directions. All future operations are performed on image data that has been transformed relative to the assigned orientation, scale, and location for each feature, t32hereby providing invariance to these transformations.
+   ![image-20220806191942973](https://user-images.githubusercontent.com/66621797/184053502-9109b565-f387-4f00-bdab-0d9cee21b78e.png)
 
-   ![image-20220806191942973](Classifying%20urban%20land%20use%20by%20integrating%20remote%20sensing%20and%20social%20media%20data.assets/image-20220806191942973.png)
+
 
 4. **Keypoint descriptor**: The local image gradients are measured at the selected scale in the region around each keypoint. These are transformed into a representation that allows for significant levels of local shape distortion and change in illumination.
 
